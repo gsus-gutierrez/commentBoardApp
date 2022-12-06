@@ -1,7 +1,14 @@
-import { Button, Card, CardContent, Typography } from '@mui/material'
+import {
+    Button,
+    Card,
+    CardContent,
+    IconButton,
+    Typography,
+} from '@mui/material'
 import axios from 'axios'
 import { Dispatch, SetStateAction } from 'react'
 import { CommentData } from '../views/CommentBoard'
+import './Comment.css'
 
 const CommentCard = (props: {
     commentData: CommentData & { id: string }
@@ -51,6 +58,7 @@ const CommentCard = (props: {
                 textAlign: 'justify',
                 margin: '10px',
             }}
+            className="animate pop"
         >
             <CardContent>
                 <Typography variant="h6" component="div">

@@ -24,8 +24,7 @@ const port = process.env.PORT;
 app.use(express_1.default.json());
 app.use((0, cors_1.default)());
 app.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(yield (0, commentController_1.createComment)('mail', 'comment'));
-    res.send('Express + TypeScript Server with Perritos');
+    res.send('Express + TypeScript Server');
 }));
 app.post('/comment', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {

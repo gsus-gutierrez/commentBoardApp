@@ -16,7 +16,6 @@ exports.getComments = exports.getComment = exports.deleteComment = exports.updat
 const Comment_1 = __importDefault(require("../models/Comment"));
 const createComment = (comment, email) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        console.log(comment, email);
         const newComment = yield Comment_1.default.create({ comment, email });
         return newComment;
     }

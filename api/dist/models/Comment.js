@@ -29,10 +29,6 @@ Comment.init({
 }, {
     sequelize: sequelizeConfig_1.default,
 });
-// `sequelize.define` also returns the model
-console.log(Comment === sequelizeConfig_1.default.models.Comment); // true
-console.log(Comment) // true
-;
 (() => __awaiter(void 0, void 0, void 0, function* () {
     yield sequelizeConfig_1.default.sync();
     // Code here

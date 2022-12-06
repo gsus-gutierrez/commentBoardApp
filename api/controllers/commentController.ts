@@ -1,20 +1,20 @@
-import Comment from "../models/Comment"
-
+import Comment from '../models/Comment'
 
 export const createComment = async (comment: string, email: string) => {
     try {
-        console.log(comment, email)
         const newComment: Comment = await Comment.create({ comment, email })
         return newComment
     } catch (error) {
         console.error(error)
     }
-
 }
 
-export const updateComment = async (id: string, comment: string, email: string) => {
+export const updateComment = async (
+    id: string,
+    comment: string,
+    email: string
+) => {
     try {
-
         const commentInstance: Comment | null = await getComment(id)
         return await commentInstance?.update({ comment, email })
     } catch (error) {
@@ -24,7 +24,6 @@ export const updateComment = async (id: string, comment: string, email: string) 
 }
 export const deleteComment = async (id: string): Promise<void> => {
     try {
-
         const commentInstance: Comment | null = await getComment(id)
         return await commentInstance?.destroy()
     } catch (error) {
@@ -41,7 +40,6 @@ export const getComment = async (id: string): Promise<Comment | null> => {
         console.error(error)
         throw new Error('Error while finding comment')
     }
-
 }
 
 export const getComments = async (): Promise<Comment[] | null> => {
@@ -53,6 +51,4 @@ export const getComments = async (): Promise<Comment[] | null> => {
         console.error(error)
         throw new Error('Error while finding comment')
     }
-
 }
-

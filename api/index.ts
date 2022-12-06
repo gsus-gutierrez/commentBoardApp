@@ -21,8 +21,7 @@ app.use(express.json())
 app.use(cors())
 
 app.get('/', async (req: Request, res: Response) => {
-    console.log(await createComment('mail', 'comment'))
-    res.send('Express + TypeScript Server with Perritos')
+    res.send('Express + TypeScript Server')
 })
 
 app.post('/comment', async (req: Request, res: Response) => {

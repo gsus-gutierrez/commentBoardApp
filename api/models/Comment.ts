@@ -28,8 +28,6 @@ Comment.init(
 )
 
 // `sequelize.define` also returns the model
-console.log(Comment === sequelize.models.Comment) // true
-console.log(Comment) // true
 ;(async () => {
     await sequelize.sync()
     // Code here

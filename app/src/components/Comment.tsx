@@ -10,9 +10,15 @@ const CommentCard = (props: {
     >
     setIsEditing: Dispatch<SetStateAction<boolean>>
     setLoading: Dispatch<SetStateAction<boolean>>
+    setUrl: Dispatch<SetStateAction<string>>
 }) => {
-    const { commentData, setCurrentCommentData, setIsEditing, setLoading } =
-        props
+    const {
+        commentData,
+        setCurrentCommentData,
+        setIsEditing,
+        setLoading,
+        setUrl,
+    } = props
 
     const handleSetCurrentComment = () => {
         setCurrentCommentData(commentData)
@@ -20,6 +26,7 @@ const CommentCard = (props: {
     }
 
     const handleDeleteComment = () => {
+        setUrl('')
         setLoading(true)
         axios
             .delete(`http://localhost:3000/comment/${commentData.id}`)
@@ -31,6 +38,7 @@ const CommentCard = (props: {
             })
             .finally(() => {
                 setLoading(false)
+                setUrl('http://localhost:3000/comment/')
             })
     }
 
@@ -48,7 +56,6 @@ const CommentCard = (props: {
                     {commentData.email}
                 </Typography>
                 {commentData.comment}
-                {commentData.id}
                 <div>
                     <Button onClick={handleSetCurrentComment}>Edit</Button>
                     <Button onClick={handleDeleteComment}>Delete</Button>

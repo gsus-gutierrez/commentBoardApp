@@ -6,6 +6,7 @@ function useFetch(url: string, setLoading: Dispatch<SetStateAction<boolean>>) {
     const [error, setError] = useState(null)
 
     useEffect(() => {
+        console.log('usfetch')
         setLoading(true)
         axios
             .get(url)

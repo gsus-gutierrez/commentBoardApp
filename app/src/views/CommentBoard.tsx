@@ -45,6 +45,7 @@ const CommentBoard: React.FC = (props) => {
                                       }
                                       setIsEditing={setIsEditing}
                                       setLoading={setLoading}
+                                      setUrl={setUrl}
                                   />
                               )
                           })

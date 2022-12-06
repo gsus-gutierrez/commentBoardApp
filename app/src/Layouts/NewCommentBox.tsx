@@ -38,6 +38,7 @@ const NewCommentBox: React.FC<{
 
     const handleSendComment = async () => {
         setLoading(true)
+        setUrl('')
         if (isEditing) {
             await axios
                 .put(
@@ -57,7 +58,6 @@ const NewCommentBox: React.FC<{
                 .post('http://localhost:3000/comment', currentCommentData)
                 .then((res) => {
                     console.log(res.data)
-                    setUrl('')
                 })
                 .finally(() => {
                     setUrl('http://localhost:3000/comment/')

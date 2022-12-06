@@ -77,6 +77,7 @@ const NewCommentBox: React.FC<{
                 borderRadius: '10px',
                 padding: '30px',
                 textAlign: 'justify',
+                margin: '10px',
             }}
         >
             <Grid container>

@@ -49,6 +49,7 @@ const CommentCard = (props: {
                 borderRadius: '10px',
                 padding: '10px',
                 textAlign: 'justify',
+                margin: '10px',
             }}
         >
             <CardContent>
